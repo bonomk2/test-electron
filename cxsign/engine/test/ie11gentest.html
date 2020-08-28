@@ -1,0 +1,109 @@
+<!DOCTYPE html> 
+ 
+<html> 
+<head> 
+  <meta charset="utf-8" /> 
+  <title>Web Cryptography API - Signing Data</title> 
+<style>
+.output {width: 800px; border: 1px solid black; padding: 5px; overflow-y: auto; word-break: break-all;}
+#log1 {height:200px;}
+#log2 {height:400px;}
+.none {color:blue;}
+.ok {color:blue;}
+.fail {color:red;}
+</style>
+<script>
+function log(elem,what,result,msg) {
+	if( result == null || result == undefined ) result = "none";
+	else if( result ) result = "ok"; else result = "fail";
+	var p = document.createElement("p");
+	p.innerHTML = "<label>"+what+" : "+"</label><label class='"+result+"'>"+msg+"</label>";
+	elem.appendChild( p );
+}
+function log1(what,result,msg) {
+	log(document.querySelector("#log1"),what, result, msg);
+}
+function log2(what,result,msg) {
+	log(document.querySelector("#log2"),what, result, msg);
+}
+</script>
+</head> 
+<h3>Crypto Object Check</h3>
+<div class="output" id="log1">
+</div>
+<h3>Crypto Operation Pass</h3>
+<div class="output" id="log2">
+</div>
+<body> 
+  <script> 
+ 
+    // WARNING: The following code works only in IE11 
+     
+    var pubKey; 
+    var privKey; 
+    var data = new Uint8Array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]); // The data to be signed. 
+    var encryptedData; 
+    var decryptedData; 
+    var crypto = window.crypto || window.msCrypto; 
+	
+	log1( "window.crypto",null,String(crypto) );
+	log1( "window.msCrypto",null,String(crypto) );
+	log1( "crypto.subtle",null,String(crypto.subtle) );
+	log1( "crypto.subtle.generateKey",null,String(crypto.subtle.generateKey) );
+	log1( "crypto.subtle.generateKey",null,String(crypto.subtle.sign) );
+ 
+    if (crypto.subtle) { 
+      var genOp = crypto.subtle.generateKey( 
+        { name: "RSASSA-PKCS1-v1_5", modulusLength: 2048, publicExponent: new Uint8Array([0x01, 0x00, 0x01]) }, 
+        false, 
+        ["encrypt", "decrypt"]); 
+ 
+      genOp.onerror = function (e) { console.log("genOp.onerror event handler fired."); } 
+      genOp.oncomplete = function (e) { 
+        pubKey = e.target.result.publicKey; 
+        privKey = e.target.result.privateKey; 
+ 
+        if (pubKey && privKey) {
+			log2("generateKey RSASSA-PKCS1-v1_5",true,"PASS");
+        } else { 
+			log2("generateKey RSASSA-PKCS1-v1_5",true,"FAIL");
+        } // if-else 
+ 
+        var signkey = crypto.subtle.sign({ name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" }, privKey, data); 
+ 
+        signkey.onerror = function (evt) { 
+			log2("signkey.onerror",false,"event handler fired.");
+        } 
+ 
+        signkey.oncomplete = function (evt) { 
+          signature = evt.target.result; 
+ 
+          if (signature) { 
+			log2("Sign with RSASSA-PKCS1-v1_5 - SHA-256",true,"PASS");
+          } else { 
+			log2("Sign with RSASSA-PKCS1-v1_5 - SHA-256",false,"FAIL");
+          } 
+ 
+          var verifysig = crypto.subtle.verify({ name: "RSASSA-PKCS1-v1_5", hash: "SHA-256"}, pubKey, signature, data); 
+ 
+          verifysig.onerror = function (evt) { 
+			log2("Verify verifysig.onerror",false,"event handler fired.");
+          } 
+ 
+          verifysig.oncomplete = function (evt) { 
+            var verified = evt.target.result; 
+ 
+            if (verified) { 
+			  log2("Verify Operation for RSASSA-PKCS1-v1_5 - SHA-256",true,"PASS");
+            } else { 
+			  log2("Verify Operation for RSASSA-PKCS1-v1_5 - SHA-256",false,"FAIL");
+            } // if-else 
+          }; // verifysig.oncomplete 
+        }; // signkey.oncomplete 
+      }; // genOp.oncomplete 
+    } else { 
+	  log2("crypto.subtle invalid",false,"Unable to create window.crypto object");
+    } // if-else, (crypto.subtle) 
+  </script> 
+</body> 
+</html> 

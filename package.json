@@ -1,0 +1,22 @@
+{
+  "name": "test-electron",
+  "version": "0.1.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "electron": "^9.2.1",
+    "electron-chromedriver": "^9.0.0",
+    "electron-devtools-installer": "^3.1.1",
+    "selenium-webdriver": "^4.0.0-alpha.7",
+    "spectron": "^11.1.0",
+    "webdriverio": "^6.4.2"
+  },
+  "dependencies": {
+    "electron-builder": "^22.8.0"
+  }
+}

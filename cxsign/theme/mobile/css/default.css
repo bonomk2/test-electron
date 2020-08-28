@@ -1,0 +1,185 @@
+ @charset "utf-8";
+ @import url("../css/reset.css");
+
+
+ /*******************************************************************
+	Layout
+********************************************************************/
+#wrap{position:relative;width:100%;height:100%;position: fixed;overflow-y: scroll;-webkit-overflow-scrolling: touch;}
+
+ /*******************************************************************
+	Common
+*******************************************************************/
+#header {z-index: 200;position: fixed;top: 0;left: 0;width: 100%;height: 45px;padding: 12px 0;box-sizing: border-box;border-bottom: 1px solid #ebebeb;background: #fff}
+#header .btn_back {display: block;position: absolute;top: 0;left: 0;width: 45px}
+#header .title {display: block;width: 100%;font-weight: bold;font-size: 1.2rem;color: #333;letter-spacing: -0.0625rem;text-align: center}
+
+#container {position: relative;width: 90%;padding: 65px 5% 10%}
+#load_container {position: relative;width: 100%}
+
+/* btn_set */
+.btn_area {display: block;width: 100%;margin-top: 5%;text-align: center;font-size: 0}
+.btn_blu {display: inline-block;width: 48%;height: 40px;padding-top: 10px;box-sizing: border-box;background: #262b44;font-weight: bold;font-size: 1rem;color: #fff;text-align: center}
+.btn_gry {display: inline-block;width: 48%;height: 40px;padding-top: 10px;margin-left: 4%;box-sizing: border-box;border: solid 1px #c6c6c6;font-weight: bold;font-size: 1rem;color: #666;text-align: center }
+.btn_red {display: inline-block;width: 48%;height: 40px;padding-top: 10px;box-sizing: border-box;background: #ff8400;font-weight: bold;font-size: 1rem;color: #fff;text-align: center}
+
+ /* modal bg */
+.modal_bg {display: none;z-index: 300;position: absolute;top: 0;left: 0;width: 100%;height: 540px;background: #000;opacity: 0.7;-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=70)'}
+
+ /* 팝업 */
+.pop_area {z-index: 400;display: none;position: absolute;top:35vh;left: 5%;width: 80%;padding: 5%;background: #fff;text-align: center}
+.pop_area .title {display: block;width: 100%;font-weight: bold;font-size: 1.2rem;color: #333;letter-spacing: -0.0625rem}
+.pop_area .noti_area {display: block;width: 90%;padding: 10% 5%;text-align: center;font-size: 0}
+.pop_area .noti_area .ico_noti {display: inline-block;width: 20%;vertical-align: middle}
+.pop_area .noti_area .ico_noti .ico {display: block;width: 30px;margin: 0 auto}
+/* .pop_area .noti_area .txt{display:inline-block;width:80%;font-weight:bold;font-size:0.875rem;color:#094a9a;vertical-align:middle;text-align:left;letter-spacing:-0.0625rem} */
+.pop_area .noti_area .txt {display: inline-block;width: 80%;font-weight: bold;font-size: 0.875rem;color: #717171;vertical-align: middle;text-align: left;letter-spacing: -0.0625rem}
+/* 191223 수정 및 추가 end - 홍영주 */
+.pop_area .btn_area {margin-top: 0}
+
+/* loading */
+/* .load_box{display:inline-block;position:absolute;top:50%;left:0;width:100%;transform:translateY(-50%);text-align:center} */
+.load_box {display: inline-block;padding-top: 50%;position: absolute;left: 0;width: 100%;text-align: center }
+.load_box .load_seq {width: 80px;margin: 0 auto}
+.load_box .load_txt {display: block;font-size: 1.1rem;color: #333;margin-top: 5%;letter-spacing: -0.0625rem }
+.load_box .load_txt strong {font-weight: bold; color: #ff8400}
+
+/*******************************************************************
+	1. 인증서 내보내기
+********************************************************************/
+/* top_rac */
+.top_rac {position: relative;width: 90%}
+.top_rac {display: block;width: 100%;padding-bottom: 1em }
+.top_bg {display: block;width: 43%;margin: 0 auto;padding: 1.9em}
+.top_rac .top_txt {display: block;width: 100%;margin-top: 5%; margin-bottom: 1em;font-size: 1.1rem;letter-spacing: -0.0625rem;color: #666;text-align: center;line-height: 1.4em}
+.top_rac .top_txt em {display: inline-block;font-weight: bold;font-style: normal;color: #ff8400;vertical-align: top}
+/* input 입력 */
+.input_set {position: relative;width: 100%;font-size: 0; margin-bottom: 5%}
+.input_set .tit {display: block;width: 100%; margin-top: 3%; margin-bottom: 3%;font-weight: 500;font-size: 1.1rem;color: #666;letter-spacing: -0.0625rem;text-align: center}
+/* .input_set .tit strong {color: #ff8400} */
+.input_set strong em {display: inline-block;font-weight: bold;font-style: normal;color: #ff8400;vertical-align: top}
+.input_set .tit.red {font-size: 0.9rem;color: #d35933}
+.input_set .tit.def {font-size: 0.9rem;color: #333}
+.input_set .tit.gry {font-size: 0.9rem;color: #999;line-height: 1.5em; font-size: 0.85rem;font-weight: 00;}
+.input_set input[type="password"],
+.input_set input[type="number"],
+.input_set input[type="text"] { width: 48%;height: 40px;padding: 10px;margin-left: 4%;font-size: 1rem;color: #333;text-align: center}
+.input_set input[type="password"],
+.input_set input[type="number"],
+.input_set input[type="text"]:first-child {margin-left: 0}
+.input_set {position: relative;width: 100%;font-size: 0}
+/* 암호 변경 input */
+.input_set3 {position: relative;display: inline-flex;width: 100%;font-size: 0}
+.input_set3 .tit {display: block;width: 100%; margin-bottom: 4%;margin-top: 0.8em;font-weight: 500;font-size: 1.1rem;color: #666;letter-spacing: -0.0625rem;text-align: left}
+.input_set3 .tit strong {color: #ff8400}
+.input_set3 .tit.red {font-size: 0.9rem;color: #d35933}
+.input_set3 .tit.def {font-size: 0.9rem;color: #333}
+.input_set3 .tit.def2 {font-size: 1rem;color: #666;font-weight: 400}
+.input_set3 .tit.gry {font-size: 0.9rem;color: #999;line-height: 1.5em;font-size: 0.95rem;}
+.input_set3 input[type="password"],
+.input_set3 input[type="number"] {width: 200%;height: 40px;padding: 10px;margin-left: 4%;font-size: 1rem;color: #333;text-align: center}
+.input_set3 input[type="password"],
+.input_set3 input[type="number"]:first-child {margin-left: 0}
+/* info 안내 박스 */
+/* 20200820 박규리 : info_rac 에서 z-index 제거*/
+.info_rac {width: 100%;height: 10%;margin: 0 auto;padding: 0px;position: relative;box-sizing: border-box;}
+.info_rac .info_lst {display: inline-block;width: 100%;font-size: 0.9rem;color: #888;letter-spacing: -0.0625rem;line-height: 1.4rem;font-weight: 400;bottom: 0;position: fixed;padding: 1em;background: #f9f9f9}
+.info_rac .info_lst li {display: block;width: 85%;padding-left: 3%;background: url('../images/ico/ico_dot_gry.gif') no-repeat 0 8px;background-size: 2px;vertical-align: top}
+.info_rac .info_lst li:first-child {margin-top: 0}
+.info_rac .info_lst li .link {display: inline-block;color: #262b44;text-decoration: underline;vertical-align: top;font-weight: bold}
+
+.info_rac .info_lst ol {display: block;width: 85%;background-size: 2px;vertical-align: top;list-style-position: inside;list-style-type: decimal;text-indent: -28px;padding-left: 28px;}
+.info_rac .info_lst ol::first-letter {margin-top: 0;width: 8px;height: 18px;background-color: #b5bbd9;border-radius: 50%;color: #fff;padding: 0.03rem 0.35rem 0.1rem 0.25rem;margin-right: 0.5rem;text-indent: -1.5em;}
+.info_rac .info_lst ol .link {display: inline-block;color: #262b44;text-decoration: underline;vertical-align: top;font-weight: bold}
+
+/*******************************************************************
+	2. 인증서 암호 입력
+********************************************************************/
+.input_set.full input[type="password"],
+.input_set.full input[type="number"],
+.input_set.full input[type="text"] {width: 100%}
+
+/*******************************************************************
+	3. 공인인증서 로그인
+********************************************************************/
+.cert_lst { display: block; overflow-x: hidden; overflow-y: auto; width: 100%; box-sizing: border-box }
+/* 20200820 박규리 : padding 값 조절 */
+.cert_lst li { display: block; position: relative; width: calc(100% - 2px); padding: 5% 5% 5% 30%; margin-top: 10px; box-sizing: border-box; background-size: 50px auto; border-bottom: 1px solid #d2d2d2}
+.cert_lst li:first-child { margin-top: 0}
+.cert_lst li .info_area { width: 90%; padding: 0 5%; white-space: nowrap; overflow:hidden; text-overflow: ellipsis;}
+.cert_lst li .info_area .tit { font-weight: bold; font-size: 1rem; color: #262b44; letter-spacing: -0.0625rem}
+.cert_lst li .info_area .txt_box { display: block; width: 100%; margin-top: 5%}
+.cert_lst li .info_area .txt_box .txt_set { display: block; width: 100%;margin-top: 2%; font-size: 0}
+.cert_lst li .info_area .txt_box .txt_set:first-child {margin-top: 0}
+.cert_lst li .info_area .txt_box .txt_set .lft_box { display: inline-block; width: 25%; vertical-align: top}
+.cert_lst li .info_area .txt_box .txt_set .rgt_box { display: inline-block; width: 70%;margin-left: 5%;vertical-align: top}
+.cert_lst li .info_area .txt_box .txt_set .txt {display: inline-block; font-size: 0.84rem; color: #666; letter-spacing: -0.0625rem; vertical-align: top}
+
+.cert_no_div{width: 100%; height: 80px; text-align: center; padding-top: 20%}
+.cert_no_span{font-size: 0.9rem; color: #666}
+/*******************************************************************
+	4. 전자서명
+********************************************************************/
+.table_box {position: relative; width: 100%; box-sizing: border-box; border: 1px solid #d2d2d2}
+.table_box.mt {margin-top: 5%}
+table.type1 {width: 100%; word-break: break-all}
+table.type1 thead th {padding: 12px;background: #f6f6f6;border-left: 1px solid #d2d2d2;font-weight: bold;font-size: 0.875rem;color: #222;letter-spacing: -0.0625rem}
+table.type1 tbody th {padding: 12px; background: #fff;border-top: 1px solid #d2d2d2;border-left: 1px solid #d2d2d2; font-size: 0.75rem;color: #666; letter-spacing: -0.0625rem;text-align: left;font-weight: 600;}
+table.type1 td {padding: 12px;background: #fff; border-top: 1px solid #d2d2d2;border-left: 1px solid #d2d2d2;font-size: 0.75rem; color: #888;letter-spacing: -0.0625rem;font-weight: 500;}
+
+.auth1{background: url("../images/bg/ico_certi_due.png") no-repeat 10% 50%}
+.auth2{background: url("../images/bg/ico_certi_expire.png") no-repeat 10% 50%}
+.auth3{background: url("../images/bg/ico_certi_vaild.png") no-repeat 10% 50%}
+.cloud_auth1{background: url("../images/bg/cloud_ico_certi_due.png") no-repeat 10% 50%}
+.cloud_auth2{background: url("../images/bg/cloud_ico_certi_expire.png") no-repeat 10% 50%}
+.cloud_auth3{background: url("../images/bg/cloud_ico_certi_vaild.png") no-repeat 10% 50%}
+
+/*******************************************************************
+	5. 인증서 없을때 가져오기
+********************************************************************/
+/* 200103 수정 및 추가 start - 이혜림*/
+.cert_add_area{width:100%; text-align:center; position:relative; top:0; padding:50% 0;}
+.cert_add_area img{width:15%;}
+.cert_add_area p{margin:20px; color: #262b44;}
+
+/*******************************************************************
+	6. 로딩
+********************************************************************/
+.loading{z-index:500;display:none;position:absolute;width:87px;height:87px;background:url("../images/loading/loading.png") no-repeat 0 0}
+.kbd_loading{z-index:501;display:none;position:absolute;top:50%;left:50%;width:87px;height:87px;margin-left:-15px;margin-top:-15px;background:url("../images/loading/loading.png") no-repeat 0 0}
+
+@media all and (max-width:320px) {
+/*******************************************************************
+1. 인증서 내보내기
+********************************************************************/
+/* info 안내 박스 */
+.info_rac .info_lst {font-size: 0.75rem}
+
+/*******************************************************************
+3. 공인인증서 로그인
+********************************************************************/
+.cert_lst li .info_area .txt_box .txt_set .txt {font-size: 0.675rem}
+
+}
+
+
+@media all and (min-width:480px) {
+/*******************************************************************
+Common
+*******************************************************************/
+/* loading */
+.load_box {transform: translateY(-40%)}
+
+/*******************************************************************
+1. 인증서 내보내기
+********************************************************************/
+/* top_rac */
+.top_rac .top_bg {width: 100%; margin: 0 auto}
+
+/*******************************************************************
+3. 공인인증서 로그인
+********************************************************************/
+.cert_lst li {background-size: 80px auto}
+.cert_lst li .info_area .tit {font-size: 1.2rem}
+.cert_lst li .info_area .txt_box .txt_set .txt {font-size: 0.875rem}
+ }

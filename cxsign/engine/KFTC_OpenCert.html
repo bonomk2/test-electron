@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+window['TouchEnNxConfig'] = {'path':{'base':'../../..'}, 'installPage':{}};
+window['nxbasepath'] = "";
+window['TOUCHENEX_UTIL'] = {
+	isWin : function(){},
+	isSafari : function(){},
+	isIE : function(){},
+	getBrowserVer : function(){}
+};	
+</script>
+<script type='text/javascript' charset='utf-8' src='../../js/ksbiz_config.js'></script>
+<script type='text/javascript'>
+var corp = KSBizConfig.yessignOpenCertInfo.corpcode;
+var cDate = new Date();
+var dd = cDate.getDate();
+var mm = cDate.getMonth()+1;
+var today = cDate.getFullYear() + "" + (mm<10?'0'+mm:mm) + "" + (dd<10?'0'+dd:dd);
+var query = "?dt="+today+"&corp="+corp;
+document.write('\x3Cscript type="text/javascript" src="../theme/assets/js/jquery-1.11.3.min.js">\x3C/script>');
+document.write('\x3Cscript type="text/javascript" src="' + KSBizConfig.yessignOpenCertInfo.opencertUrl + query + '">\x3C/script>');
+document.write('\x3Cscript type="text/javascript" src="' + KSBizConfig.yessignOpenCertInfo.relayUrl + query+'">\x3C/script>');
+</script>
+</body>
+</html>
