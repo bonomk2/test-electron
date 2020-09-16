@@ -8,6 +8,7 @@ const {
 } = require("electron");
 const path = require("path");
 const fs = require("fs");
+const { argv } = require("process");
 
 const isMac = process.platform === "darwin";
 
@@ -36,6 +37,8 @@ function createWindow() {
   });
   win.loadFile("index.html");
   // win.loadFile("cxsign/theme/ksbiz/ksbizpure.html");
+  // win.loadURL('https://bizdev.raonsecure.co.kr:8447/raonnx/ksbiz/jsp/tk_crt.jsp')
+  // win.loadURL('https://dev.iniline.co.kr')
 
   /**
    * ready-to-show 이벤트를 사용해서 뿅하고 보이게
@@ -48,7 +51,7 @@ function createWindow() {
   /**
    * debug창
    */
-  win.webContents.openDevTools();
+  // win.webContents.openDevTools();
 
   /**
    * 작업표시줄 progressbar
@@ -87,9 +90,7 @@ function createWindow() {
 }
 
 app.on("window-all-closed", () => {
-  if (process.platform !== "darwin") {
-    app.quit();
-  }
+  isMac ? {} : app.quit()
 });
 app.on("activate", () => {
   if (BrowserWindow.getAllWindows().length === 0) {
@@ -221,11 +222,6 @@ ipcMain.on("ondragstart", (event, filepath) => {
   });
 });
 
-console.log("process.execPath:: ", process.execPath);
-console.log("__dirname:: ", __dirname);
-console.log("process.platform:: ", process.platform);
-console.log("process.arch:: ", process.arch);
-
 app.whenReady().then(() => {
   /**
    * 접근성지원
@@ -301,3 +297,26 @@ app.whenReady().then(() => {
 //   console.log("nativeTheme.shouldUseDarkColors changed::", nativeTheme.shouldUseDarkColors);
 //   //updateMyAppTheme(nativeTheme.shouldUseDarkColors)
 // });
+
+
+/**
+ * process
+ */
+// console.log("argv: ", process.argv);
+// console.log("execPath: ", process.execPath)
+// console.log("execArgv: ", process.execArgv)
+// console.log("env: ", process.env)
+console.log("pid: ", process.pid)
+console.log("ppid: ", process.ppid)
+// console.log("sandboxed: ", process.sandboxed)
+// console.log("type: ", process.type)
+// console.log("version: ", process.version)
+// console.log("versions: ", process.versions)
+// console.log("mas: ", process.mas);
+// console.log("windowsStore: ", process.windowsStore)
+// console.log("cpuusage:", process.getCPUUsage())
+// console.log("processMemoryInfo:", process.getProcessMemoryInfo())
+console.log("__dirname:: ", __dirname);
+console.log("platform:: ", process.platform);
+console.log("arch:: ", process.arch);
+console.log("systemVersion:", process.getSystemVersion())

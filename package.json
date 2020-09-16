@@ -3,20 +3,31 @@
   "version": "0.1.0",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "clean": "del /s /q dist\\*.* && rmdir /s /q dist",
+    "build:win32": "electron-builder -c electron-builder.json --windows --ia32",
+    "build:win64": "electron-builder -c electron-builder.json --windows --x64",
+    "build:osx": "electron-builder -c electron-builder.json --mac",
+    "build:linux32": "electron-builder -c electron-builder.json --linux --ia32",
+    "build:linux64": "electron-builder -c electron-builder.json --linux --x64"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": "https://github.com/bonomk2/test-electron",
+  "keywords": [
+    "electron",
+    "tutorial",
+    "test"
+  ],
+  "author": "bonomk2",
+  "license": "MIT",
   "description": "",
   "devDependencies": {
     "electron": "^9.2.1",
+    "electron-builder": "^22.8.0",
     "electron-chromedriver": "^9.0.0",
     "electron-devtools-installer": "^3.1.1",
     "selenium-webdriver": "^4.0.0-alpha.7",
     "spectron": "^11.1.0",
     "webdriverio": "^6.4.2"
   },
-  "dependencies": {
-    "electron-builder": "^22.8.0"
-  }
+  "dependencies": {}
 }

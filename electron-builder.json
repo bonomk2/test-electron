@@ -1,0 +1,33 @@
+{
+  "productName": "TestElectron",
+  "appId": "net.bonobono.electron.test",
+  "asar": true,
+  "protocols": {
+    "name": "testElectron",
+    "schemes": ["testelectron"]
+  },
+  "directories": {
+    "output": "dist/",
+    "app": "."
+  },
+  "win": {
+    "target": ["zip"],
+    "icon": "./default.ico"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": false
+  },
+  "mac": {
+    "target": ["default"],
+    "icon": "./default.icns"
+  },
+  "dmg": {
+    "title": "TestElectron",
+    "icon": "./default.icns"
+  },
+  "linux": {
+    "target": ["AppImage", "deb", "rpm", "zip", "tar.gz"],
+    "icon": "./default.png"
+  }
+}
