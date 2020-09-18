@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/firebug-lite/1.4.0/firebug-lite.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+function isIFrame() {
+	return localStorage['openCert_test_mode'] == 'iframe';
+}
+
+function changeMode( mode ) {
+	localStorage['openCert_test_mode'] = mode;
+	location.reload();
+}
+
+function loadJS(url, loaded){
+    var scriptTag = document.createElement('script');
+    scriptTag.src = url;
+    scriptTag.onreadystatechange = scriptTag.onload = loaded;
+    document.head.appendChild(scriptTag);
+}
+
+function start() {
+	if( isIFrame() ) 
+		document.querySelector('#iframe').checked = true; 
+	else 
+		document.querySelector('#noframe').checked = true;
+		
+	if( isIFrame() ) {
+		var iframe = document.getElementById("KFTC_OpenCert_frame");
+		iframe.src = "opencert_iframe.html";
+		iframe.onload = testStart;
+	} else {
+		testStart();
+	}
+		
+	//Firebug.chrome.open();
+	
+	/*
+	if( isIFrame() ) {
+		var iframe = document.getElementById("KFTC_OpenCert_frame");
+		loadJS("https://fidoweb.yessign.or.kr:3100/v2/relay.js", function() {
+			iframe.src = "opencert_iframe.html";
+			iframe.onload = testStart;
+		});
+	} else {
+		loadJS("https://fidoweb.yessign.or.kr:3100/v2/opencert.js", function() {
+			loadJS("https://fidoweb.yessign.or.kr:3100/v2/relay.js", testStart);
+		});
+	}
+	*/
+}
+
+
+function testStart() {
+	var opencert;
+	if( isIFrame() ) 
+		opencert = document.getElementById("KFTC_OpenCert_frame").contentWindow.OpenCert.getInstance();
+	else 
+		opencert = OpenCert.getInstance();
+		
+	opencert.init("2SrbCIB-Ooem4_jYHztF3zvBltBEH62l3bT24Nyy7mg", function(res) {
+		console.log( res );
+		alert( "opencert.init : "+JSON.stringify(res) );
+	});
+}
+
+if( isIFrame() ) {
+	document.write('\x3Cscript type="text/javascript" src="https://fidoweb.yessign.or.kr:3100/v2/relay.js">\x3C/script>');
+} else {
+	document.write('\x3Cscript type="text/javascript" src="https://fidoweb.yessign.or.kr:3100/v2/opencert.js">\x3C/script>');
+	document.write('\x3Cscript type="text/javascript" src="https://fidoweb.yessign.or.kr:3100/v2/relay.js">\x3C/script>');
+}
+
+</script>
+</head>
+<body onLoad="javascript:setTimeout('start()',3000);">
+<iframe id="KFTC_OpenCert_frame" style="width: 0; height: 0; border: 0; border: none; position: absolute;"></iframe>
+<input type="radio" id="iframe" name="frame_mode" onchange="javascript:changeMode('iframe')" >IFrame<br>
+<input type="radio" id="noframe" name="frame_mode" onchange="javascript:changeMode('noframe')" >Noframe<br>
+</body>
+</html>

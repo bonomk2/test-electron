@@ -1,0 +1,200 @@
+
+[class*="transkey"] {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+.transkey_div {background-position: 50%;background-repeat: no-repeat;background-size: 100%;border-radius: 4px;box-shadow: 0 1px 30px rgba(0,0,0,0.3);background-color: white;display:none;position: absolute;z-index: 1000;}
+.transkey_layout {border-radius: 4px;display:none;position: absolute;z-index: 1001;}
+.transkey_row {position:relative;z-index: 1002;}
+.transkey_key {font-size: 1px;color:rgba(0,0,0,0);float:left;position:relative;z-index: 1003;border-radius: 3px;border: 2px solid;border-color: rgba(0,0,0,0);}
+.transkey_key a {display: block; width: 100%; height:100%;}
+.transkey_key a:active {background-color: rgba(22, 176, 236, 0.63);border-color: #00CED1;}
+
+.transkey_qwerty1_div {width:320px;height:231px;}
+.transkey_qwerty1_layout {width:320px;height:231px;background-size:320px 231px;}
+.transkey_qwerty1_div {width:320px;height:231px;}
+.transkey_qwerty1_row {width: 320px;height: 45px;margin-top: 1px;}
+.transkey_qwerty1_key1 {width: 24px;height: 40px;margin-left:2px;}
+.transkey_qwerty1_key2 {width: 24px;height: 40px;}
+.transkey_qwerty1_del {width: 53px;height: 42px;}
+.transkey_qwerty1_sp {width: 84px;height: 42px;}
+.transkey_qwerty1_clear {width: 84px;height: 42px;}
+.transkey_qwerty1_done {width: 140px;height: 42px;}
+
+.transkey_qwerty2_div {width:360px;height:231px;}
+.transkey_qwerty2_layout {width:360px;height:231px;background-size:360px 231px;}
+.transkey_qwerty2_row {width: 360px;height: 45px;margin-top: 1px;}
+.transkey_qwerty2_key1 {width: 28px;height: 40px;margin-left:1px;}
+.transkey_qwerty2_key2 {width: 28px;height: 40px;}
+.transkey_qwerty2_del {width: 62px;height: 42px;}
+.transkey_qwerty2_sp {width: 94px;height: 42px;}
+.transkey_qwerty2_clear {width: 94px;height: 42px;}
+.transkey_qwerty2_done {width: 159px;height: 42px;}
+
+
+.transkey_qwerty3_div {width:600px;height:400px;}
+.transkey_qwerty3_layout {width:600px;height:400px;background-size:600px 400px;}
+.transkey_qwerty3_row {width: 600px;height: 77px;margin-top: 3px;}
+.transkey_qwerty3_key1 {width: 49px;height: 72px;margin-left:2px;}
+.transkey_qwerty3_key2 {width: 49px;height: 72px;margin-left:1px;}
+.transkey_qwerty3_del {width: 103px;height: 72px;}
+.transkey_qwerty3_sp {width: 160px;height: 72px;}
+.transkey_qwerty3_clear {width: 160px;height: 72px;}
+.transkey_qwerty3_done {width: 266px;height: 72px;}
+
+.transkey_number1_div {width:320px;height:134px;background-size:320px 134px;}
+.transkey_number1_row {width: 100%;height: 44px;margin-top: 1px;}
+.transkey_number1_key1 {width: 48px;height: 41px;margin-left: 1px;}
+.transkey_number1_key2 {width: 48px;height: 41px;margin-left: 1px;}
+.transkey_number1_del {width: 84px;height: 39px;}
+.transkey_number1_clear {width: 84px;height: 39px;}
+.transkey_number1_done {width: 140px;height: 39px;}
+
+.transkey_number2_div {width:360px;height:134px;background-size:360px 134px;}
+.transkey_number2_row {width: 100%;height: 44px;margin-top: 1px;}
+.transkey_number2_key1 {width: 55px;height: 41px;margin-left: 1px;}
+.transkey_number2_key2 {width: 55px;height: 41px;}
+.transkey_number2_del {width: 94px;height: 39px;}
+.transkey_number2_clear {width: 94px;height: 39px;}
+.transkey_number2_done {width: 159px;height: 39px;}
+
+.transkey_number3_div {width:600px;height:200px;background-size:600px 200px;}
+.transkey_number3_row {width: 600px;height: 66px;margin-top: 1px;}
+.transkey_number3_key1 {width: 94px;height: 63px;margin-left: 1px;}
+.transkey_number3_key2 {width: 94px;height: 63px;margin-left: 2px;}
+.transkey_number3_del {width: 155px;height: 61px;margin: 0px 2px 0px 3px;}
+.transkey_number3_clear {width: 155px;height: 61px;position: relative;margin: 0px 2px 0px 3px;}
+.transkey_number3_done {width: 262px;height: 61px;position: relative;margin: 0px 2px 0px 3px;}
+
+.tk_btn {cursor:pointer;text-align:center;border: 1px solid;border-radius: 3px;font: 14px/1.4em "Helvetica Neue",Arial,"Lucida Grande",sans-serif;color: #516f83;border-color: #516f83 !important;text-shadow: 0 1px 0 rgba(255,255,255,0.8);box-shadow: 0 1px 2px rgba(0,0,0,0.3);-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3);vertical-align: middle;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);-webkit-box-align: center;position:relative;font-weight: bold;line-height:22px;display:inline-table;width:69px;height:22px;background-color: #bfbfbf;background-image: -webkit-linear-gradient(top, #f2f2f2, #d9d9d9 3%, #bfbfbf);}
+.tk_btn_ {cursor:pointer;text-align:center;border: 1px solid;border-radius: 3px;font: 14px/1.4em "Helvetica Neue",Arial,"Lucida Grande",sans-serif;color: #fff;border-color: #274807 !important;text-shadow: 0 -1px 0 rgba(0,0,0,0.3);box-shadow: 0 1px 2px rgba(0,0,0,0.3);-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3);vertical-align: middle;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);-webkit-box-align: center;position:relative;font-weight: bold;line-height:22px;display:inline-table;width:69px;height:22px;background-color: #6c9804;background-image: -webkit-linear-gradient(top, #a2e306, #7eb105 3%, #5b7f03);}
+
+.transkey_divLayout {position: absolute;display: none;z-index: 1008;}
+.transkey_lower {width: 607px;height: 220px;position: absolute; z-index: 1009; opacity: 1;}
+.transkey_upper {width: 607px;height: 220px;position: absolute; display: none;z-index: 1009;  opacity: 1;}
+.transkey_qwertyDragDiv{position: absolute;cursor:move;width: 615px;height:25px;top: 0px;  z-index: 1011;}
+
+/*
+.transkey_crt_divLayout {position: absolute;display: none;z-index: 1008;}
+.transkey_crt_lower {width: 430px;height: 180px;position: absolute; z-index: 1009; opacity: 1;}
+.transkey_crt_upper {width: 430px;height: 180px;position: absolute; display: none;z-index: 1009;  opacity: 1;}
+.transkey_crt_qwertyBlank {position:absolute;  left:187px; top:56px; width:58px; height:58px; display: inline;z-index: 1011;}
+.transkey_crt_qwertyBlankOver {position:absolute;  left:187px; top:56px; width:58px; height:58px; display: none;z-index: 1011;}
+.transkey_crt_qwertyMultiMouseType {position: absolute; left: 188px; top: 5px; display: inline; z-index: 1012; }
+.transkey_crt_qwertySingleMouseType {position: absolute; left: 188px; top: 5px; display: none; z-index: 1012; }
+.transkey_crt_qwertyDragDiv{position: absolute;cursor:move;width: 172px;height:20px;top: 0px;  z-index: 1011;}
+*/
+
+.transkey_crt_divLayout {position: absolute;display: none;z-index: 1008;border-radius: 7px;}
+.transkey_crt_lower {width: 615px;height: 254px;position: absolute; z-index: 1009; opacity: 1;border-radius: 7px;}
+.transkey_crt_upper {width: 615px;height: 254px;position: absolute; display: none;z-index: 1009;  opacity: 1;border-radius: 7px;}
+/*.transkey_crt_qwertyBlank {position:absolute;  left:268px; top:78px; width:80px; height:80px; display: inline;z-index: 1011;}
+.transkey_crt_qwertyBlankOver {position:absolute;  left:268px; top:78px; width:80px; height:80px; display: none;z-index: 1011;}*/
+.transkey_crt_qwertyDragDiv{position: absolute;cursor:move;width: 520px;height:25px;top: 0px;  z-index: 1011;}
+
+
+.transkey_pKey{
+	position: absolute;
+    display: none;
+    width: 38px;
+    height: 38px;
+    z-index: 1009;
+    opacity: 0.7!important;
+}
+
+.transkey_q_p_enterKey{
+	position: absolute;
+    display: none;
+    width: 78px;
+    height: 78px;
+    z-index: 1009;
+}
+
+.transkey_q_p_shiftKey{
+	position: absolute;
+    display: none;
+    width: 78px;
+    height: 38px;
+    z-index: 1009;
+}
+
+.transkey_q_p_spaceKey{
+	position: absolute;
+    display: none;
+    width: 81px;
+    height: 38px;
+    z-index: 1009;
+}
+
+.transkey_n_p_enterKey{
+	position: absolute;
+    display: none;
+    width: 38px;
+    height: 78px;
+    z-index: 1009;
+}
+
+.transkey_n_p_backKey{
+	position: absolute;
+    display: none;
+    width: 38px;
+    height: 78px;
+    z-index: 1009;
+}
+
+
+.transkey_crt_pKey{
+	position: absolute;
+    display: none;
+    width: 38px;
+    height: 38px;
+    z-index: 1009;
+    opacity: 0.7!important;
+}
+
+.transkey_crt_q_p_enterKey{
+	position: absolute;
+    display: none;
+    width: 78px;
+    height: 78px;
+    z-index: 1009;
+}
+
+.transkey_crt_q_p_shiftKey{
+	position: absolute;
+    display: none;
+    width: 78px;
+    height: 38px;
+    z-index: 1009;
+}
+
+.transkey_crt_q_p_spaceKey{
+	position: absolute;
+    display: none;
+    width: 81px;
+    height: 38px;
+    z-index: 1009;
+}
+
+.transkey_crt_n_p_enterKey{
+	position: absolute;
+    display: none;
+    width: 38px;
+    height: 78px;
+    z-index: 1009;
+}
+
+.transkey_crt_n_p_backKey{
+	position: absolute;
+    display: none;
+    width: 38px;
+    height: 78px;
+    z-index: 1009;
+}
+
+
+.transkey_map {}
+.transkey_area {}
+.transkey_label {}
+.transkey_checkbox {}
